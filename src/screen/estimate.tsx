@@ -30,30 +30,35 @@ export default function Estimate() {
     ]);
 
     const thirdLinesFirstCategory = [
-        // 
         {  
             title : "1. 서버 / 프론트",
             content : [
-            {thirdTitle:"기획-스토리보드", thirdPeriod:"14.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"},
-            {thirdTitle:"UI 디자인", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-            {thirdTitle:"관리자-회원관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-            {thirdTitle:"관리자-위탁사 등록 관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-            {thirdTitle:"위탁사-기초정보 등록관리 (교실명, 강좌영역, 수업시간, 대상학년, 공휴일 등)", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-            {thirdTitle:"월간수업 캘린더", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-            {thirdTitle:"문자발송등록관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
+                {thirdTitle:"기획-스토리보드", thirdPeriod:"14.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"},
+                {thirdTitle:"UI 디자인", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
+                {thirdTitle:"관리자-회원관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
+                {thirdTitle:"관리자-위탁사 등록 관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
+                {thirdTitle:"위탁사-기초정보 등록관리 (교실명, 강좌영역, 수업시간, 대상학년, 공휴일 등)", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
+                {thirdTitle:"월간수업 캘린더", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
+                {thirdTitle:"문자발송등록관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"}
+            ]
+        },
+        {
+            title: "PC 홈페이지",
+            content: [
+                {thirdTitle:"사용자 인터페이스 개발", thirdPeriod:"9.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"}
             ]
         }
     ]
-    const thirdLinesSecondCategory = [
-        {thirdTitle:"사용자 인터페이스 개발", thirdPeriod:"9.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"}
-    ]
 
-    const fourList = ["BGBG2022_발주.doc 문서 기준으로 작성되었습니다.","웹 기반이므로 코디마스터 프로그램중 2007 한글파일이 필요한 연동기능은 제외되었습니다."]
+    const fourList = [
+        "BGBG2022_발주.doc 문서 기준으로 작성되었습니다.",
+        "웹 기반이므로 코디마스터 프로그램중 2007 한글파일이 필요한 연동기능은 제외되었습니다."
+    ]
 
     const [correctBool, setCorrectBool] = useState(false);
     
     const correctButton = () => {
-        setCorrectBool(!correctBool);    
+        setCorrectBool(!correctBool);
     }
     return (
         <div className="estimate">
@@ -95,7 +100,7 @@ export default function Estimate() {
                     <li className="boundaryLineThreeList">인원</li>
                     <li className="boundaryLineThreeList">단가</li>
                     <li className="boundaryLineThreeList">금액</li>
-                </ul>        
+                </ul>
                 {/* <div className="lineThree">1. 서버 / 프론트</div>
                     {
                         thirdLinesFirstCategory.map((v,i)=>{
