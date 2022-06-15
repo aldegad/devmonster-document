@@ -1,56 +1,55 @@
+:root {
+    --border-color: #cfcfcf;
+    --border-bold: 0.7mm;
+    --section-margin: 7mm;
+    --header-font-weight: 700;
+    --content-font-weight: 400;
+}
 * {
     font-size: 10px;
 }
 .estimate {
-    height: 257mm;
-    /* outline: 2cm #FFEAEA solid; */
+    min-height: 257mm;
 }
 
 .estimateContent1, .estimateContent2{
-    margin-bottom: 40px;
-    border-top: 1mm solid black;
-    border-bottom: 1mm solid black;
-}
-.estimateContent4 {
-    margin-top: 100px;
-    border-top: 1mm solid black;
-    border-bottom: 1mm solid black;
+    margin-bottom: var(--section-margin);
+    border-top: var(--border-bold) solid black;
+    border-bottom: var(--border-bold) solid black;
 }
 .estimateContent3 {
-    border-top: 1mm solid black;
+    margin-bottom: var(--section-margin);
+    min-height: 96mm;
+    border-top: var(--border-bold) solid black;
+}
+.estimateContent4 {
+    border-top: var(--border-bold) solid black;
+    border-bottom: var(--border-bold) solid black;
 }
 .boundaryLine {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-wrap: wrap; 
     width: 100%;
 }
 
 .line {
-    border-bottom: 0.1px solid rgba(170, 215, 102, 0.5);
-    display: flex;
-    width: 50%;
-    padding: 5px 0 5px 0;
-}
-
-.boundaryLineTwo, .boundaryLineFour {
+    border-bottom: 0.5px solid var(--border-color);
     display: flex;
     padding: 5px 0 5px 0;
-    border-bottom: 0.1px solid rgba(170, 215, 102, 0.5);
 }
-
-.lineTwo, .lineFour {
-    display: flex;
-    flex: 1;
+.line:last-child:not(:first-child) {
+    border-bottom: 0;
 }
 
 .firstLineTitle {
-    flex: 1;
-    font-weight: 700;
+    flex: 0 0 16mm;
+    font-weight: var(--header-font-weight);
 }
 
 .firstLineContent {
     flex: 2;
-    font-weight: 100;
+    font-weight: var(--content-font-weight);
     color: rgb(53, 53, 53);
 }
 
@@ -81,7 +80,7 @@
 }
 
 .boundaryLineThreeList {
-    flex: 1;
+    flex: 0 0 20mm;
     padding-top: 0px;
     padding-bottom: 0px;
     font-weight: bold;
@@ -96,15 +95,15 @@
 }
 
 .lineThree {
-    border-bottom: 0.1px solid rgba(170, 215, 102, 0.5);
+    border-bottom: 0.1px solid var(--border-color);
     display: flex;
     width: 100%;
-    padding: 5px 0 5px 0;
+    padding: 2mm 0 1mm 0;
     font-weight: 700;
 }
 
 .lineThreeContent {
-    flex: 1;
+    flex: 0 0 20mm;
     list-style: none;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -114,18 +113,21 @@
 .lineThreeList {
     display: flex;
     padding: 2px 0 2px 0;
-    border-bottom: 0.1px solid rgba(170, 215, 102, 0.5);
+    border-bottom: 0.1px solid var(--border-color);
     margin: 0;
 }
 
 .fourLineTitle {
-    flex: 1.3;
+    flex: 0 0 28mm;
     font-weight: 700;    
     margin: auto;
 }
 
 .fourLineContent {
     flex: 1;
+}
+.fourLineContent ol {
+    padding-left: 3mm;
 }
 .fourLineContentList {
     flex: 0.8;

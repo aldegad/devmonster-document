@@ -1,33 +1,29 @@
 .header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* align-items: center; */
     margin: 0;
     padding: 0;
-    display: flex;
     width: 100%;
     height: 100px;
-    /* background-color: red; */
 }
 .headerCenter {
-    /* background-color: red; */
     text-align: center;
     margin: 0;
     padding: 0;
     font-size: 40px;
-    /* background-color: blue; */
     flex: 2;
     white-space: pre-line;
 }
 .headerLeft {
-    /* background-color: red; */
     flex: 0.5;
-    height: 60px;
-    width: 20mm;
+    width: 30mm;
 }
 .headerLogo {
     width: 100%;
     height: 100%;
 }
 .headerRight {
-    /* background-color: red; */
     padding: 0;
     margin: 0;
     text-align: right;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Header from "../component/header";
 import "../css/estimate.css";
+import { regex } from '../component/regex';
 
 export default function Estimate() {
-
 
     const valueOnChange = (ch:any, index:number,value:any,set:any) => {
         const newContent = [...value];
@@ -12,47 +12,67 @@ export default function Estimate() {
     };
 
     const [firstLines, setFirstLines] = useState([
-        {firstTitle : "회사명", content: "데브몬스터"},
-        {firstTitle : "사이트", content: "https://www.naver.com/"},
-        {firstTitle : "개발범위", content: "홈페이지, 어플"},
-        {firstTitle : "담당자", content: "김수홍 대표이사"},
-        {firstTitle : "제작기간", content: "77일"},
+        {firstTitle : "To.", content: "미림미디어랩"},
+        {firstTitle : "프로젝트 명", content: "LMS 크로스플랫폼 앱 Front end 개발"},
+        {firstTitle : "견적 담당자", content: "김수홍 대표이사"},
         {firstTitle : "연락처", content: "010.5604.4147"},
-        {firstTitle : "주소", content: "서울 특별시 강남구 도곡로 112 gvc2층 c3"},
-        {firstTitle : "견적업체", content: "에이럭스"}
+        {firstTitle : "Email", content: "aldegad@devmonster.co.kr"},
+        {firstTitle : "주소", content: "경기도 성남시 분당구 황새울로 200번길 28 오너스타워 701호"}
     ]);
     
     const [secondLines, setSecondLines] = useState([
-        {secondTitle: "개발인력", content: "기획자, 디자이너, 프론트개발자, 백엔드개발자"},
-        {secondTitle: "제작시스템", content: "Front : Angular / Back : django, Mysql, (Linux or window)"},
+        {secondTitle: "개발범위", content: "AOS Front-end, iOS Front-end"},
+        {secondTitle: "제작시스템", content: "Front-end: ionic angular"},
         {secondTitle: "결제방식", content: "선금 30% / 중도금 30% / 잔금 40%"},
-        {secondTitle: "개발툴", content: "Visual Studio Code / Visual Studio"},
+        {secondTitle: "개발툴", content: "Visual Studio Code"}
     ]);
 
-    const [thirdLinesFirstCategory, setThirdLinesFirstCategory] = useState([
-        {  
-            title : "1. 서버 / 프론트",
+    const [thirdLines, setThirdLines] = useState([
+        {
+            title : "1. 하이브리드앱 퍼블리싱 및 프론트 제작",
             content : [
-                {thirdTitle:"기획-스토리보드", thirdPeriod:"14.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"},
-                {thirdTitle:"UI 디자인", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"관리자-회원관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"관리자-위탁사 등록 관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"위탁사-기초정보 등록관리 (교실명, 강좌영역, 수업시간, 대상학년, 공휴일 등)", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"월간수업 캘린더", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"문자발송등록관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"}
+                {thirdTitle:"개발 설계 및 테마 제작", thirdPeriod: 15, thirdAmount: 2500000},
+                {thirdTitle:"인증시스템(login/join/terms)", thirdPeriod: 4, thirdAmount: 1600000},
+                {thirdTitle:"인증시스템(find-id/find-password)", thirdPeriod: 1, thirdAmount: 400000},
+                {thirdTitle:"메인(swiper, list/card, tabs)", thirdPeriod: 2, thirdAmount: 800000},
+                {thirdTitle:"검색(search, list/store)", thirdPeriod: 1, thirdAmount: 600000},
+                {thirdTitle:"검색결과(search, list/card)", thirdPeriod: 0.5, thirdAmount: 200000},
+                {thirdTitle:"공지사항(segment, list/accordian, tabs)", thirdPeriod: 1, thirdAmount: 600000},
+                {thirdTitle:"강의신청(like, share, segment, rich-content, list/card)", thirdPeriod: 2, thirdAmount: 800000},
+                {thirdTitle:"강의결재(checkbox, list/edit, rich-content/edit, payment)", thirdPeriod: 3, thirdAmount: 1200000},
+                {thirdTitle:"마이페이지(rich-content, list/card, tabs)", thirdPeriod: 1, thirdAmount: 400000},
+                {thirdTitle:"회원정보수정(profile/edit, tabs)", thirdPeriod: 1.5, thirdAmount: 600000},
+                {thirdTitle:"찜한강의(checkbox, list/card, list/edit)", thirdPeriod: 2, thirdAmount: 800000},
+                {thirdTitle:"증명서 발급(list/card, tabs)", thirdPeriod: 1, thirdAmount: 2200000},
+                {thirdTitle:"나의 강의실,메인(segment, video/custom-player, list/accordian, tabs, GPS)", thirdPeriod: 4, thirdAmount: 2400000},
+                {thirdTitle:"나의 강의실,공지사항(segment, list/accordian, tabs)", thirdPeriod: 1, thirdAmount: 600000},
+                {thirdTitle:"나의 강의실,강의(segment, video/custom-player, list, tabs, GPS)", thirdPeriod: 2, thirdAmount: 1200000},
+                {thirdTitle:"나의 강의실,시험(segment, list, tabs)", thirdPeriod: 1, thirdAmount: 400000},
+                {thirdTitle:"나의 강의실,시험상세(segment, rich-content, tabs)", thirdPeriod: 1.5, thirdAmount: 600000},
+                {thirdTitle:"나의 강의실,시험도중(segment, rich-content/edit, tabs)", thirdPeriod: 2, thirdAmount: 800000},
+                {thirdTitle:"나의 강의실,과제(segment, list, tabs)", thirdPeriod: 1, thirdAmount: 400000},
+                {thirdTitle:"나의 강의실,과제상세(segment, rich-content, tabs)", thirdPeriod: 1, thirdAmount: 400000},
+                {thirdTitle:"나의 강의실,과제제출(segment, rich-content/edit, tabs)", thirdPeriod: 1, thirdAmount: 600000},
             ]
         },
         {
-            title: "2. PC홈페이지",
+            title: "2. 디버깅",
             content: [
-                {thirdTitle:"사용자 인터페이스 개발", thirdPeriod:"9.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"}
+                {thirdTitle:"단위테스트", thirdPeriod: 30, thirdAmount: 5000000}
+            ]
+        },
+        {
+            title: "3. 출시",
+            content: [
+                {thirdTitle:"안드로이드 스토어 설정 및 배포", thirdPeriod: 7, thirdAmount: 1100000},
+                {thirdTitle:"아이폰 스토어 설정 및 배포", thirdPeriod: 14, thirdAmount: 2200000}
             ]
         }
     ]);
 
     const fourList = [
-        "BGBG2022_발주.doc 문서 기준으로 작성되었습니다.",
-        "웹 기반이므로 코디마스터 프로그램중 2007 한글파일이 필요한 연동기능은 제외되었습니다."
+        "기간은 Calendar Day를 기준으로 산정되었습니다.",
+        "보여주신 부분에서, 결재는 포함되고, 포인트는 빠진 것을 기준으로 견적이 작성되었습니다."
     ]
 
     const [correctBool, setCorrectBool] = useState(false);
@@ -81,11 +101,9 @@ export default function Estimate() {
             <div className="estimateContent2">
                     {secondLines.map((v,i)=>{
                         return (
-                            <div key={i} className="boundaryLineTwo">
-                                <div key={i+1} className="lineTwo">
-                                    <div key={v.secondTitle} className="firstLineTitle">{v.secondTitle}</div>
-                                    {correctBool ? <input type={"text"} className="firstLineContent" value={v.content} onChange={(e) => valueOnChange(e.target.value,i,secondLines,setSecondLines)} /> : <div key={v.content} className="firstLineContent">{v.content}</div>}
-                                </div>  
+                            <div key={i} className="line">
+                                <div key={v.secondTitle} className="firstLineTitle">{v.secondTitle}</div>
+                                {correctBool ? <input type={"text"} className="firstLineContent" value={v.content} onChange={(e) => valueOnChange(e.target.value,i,secondLines,setSecondLines)} /> : <div key={v.content} className="firstLineContent">{v.content}</div>}
                             </div>   
                         )
                     })}
@@ -97,11 +115,9 @@ export default function Estimate() {
                 <ul className="boundaryLineThreeHead">
                     <li className="boundaryLineThreeList1">내용</li>
                     <li className="boundaryLineThreeList">기간</li>
-                    <li className="boundaryLineThreeList">인원</li>
-                    <li className="boundaryLineThreeList">단가</li>
                     <li className="boundaryLineThreeList">금액</li>
                 </ul>      
-                {thirdLinesFirstCategory.map((v)=>{
+                {thirdLines.map((v)=>{
                     return (
                         <div>
                             <div className="lineThree">{v.title}</div>
@@ -109,100 +125,73 @@ export default function Estimate() {
                                     return (
                                         <ul key={i} className="lineThreeList">
                                             <li key={vv.thirdTitle} className="lineThreeFirst">{vv.thirdTitle}</li>
-                                            <li key={vv.thirdPeriod} className="lineThreeContent">{vv.thirdPeriod}</li>
-                                            <li key={vv.thirdPersonnel} className="lineThreeContent">{vv.thirdPersonnel}</li>
-                                            <li key={vv.thirdUnitPrice} className="lineThreeContent">{vv.thirdUnitPrice}</li>
-                                            <li key={vv.thirdAmount} className="lineThreeContent">{vv.thirdAmount}</li>
+                                            <li key={vv.thirdPeriod} className="lineThreeContent">{vv.thirdPeriod.toFixed(1)}</li>
+                                            <li key={vv.thirdAmount} className="lineThreeContent">{regex.replace.price(vv.thirdAmount)}</li>
                                         </ul> 
                                     )
                                 })}
                         </div>
                     )
                 })}  
-                {/* <div className="lineThree">1. 서버 / 프론트</div>
-                    {
-                        thirdLinesFirstCategory.map((v,i)=>{
-                            return (
-                                <ul key={i} className="lineThreeList">
-                                    <li key={v.thirdTitle} className="lineThreeFirst">{v.thirdTitle}</li>
-                                    <li key={v.thirdPeriod} className="lineThreeContent">{v.thirdPeriod}</li>
-                                    <li key={v.thirdPersonnel} className="lineThreeContent">{v.thirdPersonnel}</li>
-                                    <li key={v.thirdUnitPrice} className="lineThreeContent">{v.thirdUnitPrice}</li>
-                                    <li key={v.thirdAmount} className="lineThreeContent">{v.thirdAmount}</li>
-                                </ul>
-                            )
-                        })
-                    } */}
-
-                {/* <div className="lineThree">2. PC홈페이지</div>
-                    {
-                        thirdLinesSecondCategory.map((v,i)=>{ 
-                            return (
-                                <ul key={i} className="lineThreeList">
-                                    <li key={v.thirdTitle} className="lineThreeFirst">{v.thirdTitle}</li>
-                                    <li key={v.thirdPeriod} className="lineThreeContent">{v.thirdPeriod}</li>
-                                    <li key={v.thirdPersonnel} className="lineThreeContent">{v.thirdPersonnel}</li>
-                                    <li key={v.thirdUnitPrice} className="lineThreeContent">{v.thirdUnitPrice}</li>
-                                    <li key={v.thirdAmount} className="lineThreeContent">{v.thirdAmount}</li>
-                                </ul>
-                            )                            
-                        })
-                    } */}
             </div>
 
-            {/* 네번째 */}
             <div className="estimateContent4">
-                <div className="boundaryLineFour">
-                    <div className="lineFour">
-                        <div className="fourLineTitle">참고사항</div>
-                        <div className="fourtLineList">
-                            <ol>
-                                {fourList.map((v)=>{
-                                    return (
-                                        <li>{v}</li>
-                                    )
-                                })}
-                            </ol>
-                        </div>
-                    </div>  
+                <div className="line">
+                    <div className="fourLineTitle">참고사항</div>
+                    <div className="fourLineContent">
+                        <ol>
+                            {fourList.map((v)=>{
+                                return (
+                                    <li>{v}</li>
+                                )
+                            })}
+                        </ol>
+                    </div>
+                </div>  
+                <div className="line">
+                    <div className="fourLineTitle">총 공수</div>
+                    <div className="fourLineContent">기간(일)</div>
+                    <div className="fourLineContentResult">{
+                        regex.replace.price(thirdLines.reduce((prev, thirdLine) => {
+                            return prev + thirdLine.content.reduce((_prev, item) => _prev + item.thirdPeriod, 0)
+                        }, 0))
+                    }</div>
                 </div>
-                <div className="boundaryLineFour">
-                    <div className="lineFour">
-                        <div className="fourLineTitle">공수</div>
-                        <div className="fourLineContent">기간(일)</div>
-                        <div className="fourLineContentResult">77</div>
-                    </div>  
+                <div className="line">
+                    <div className="fourLineTitle">실 작업기간</div>
+                    <div className="fourLineContent">기간(일)</div>
+                    <div className="fourLineContentResult">90</div>
                 </div>
-                <div className="boundaryLineFour">
-                    <div className="lineFour">
-                        <div className="fourLineTitle">항목별 견적</div>
-                        <ul className="fourLineContentList">
-                            <li className="fourCalculation">합계</li>
-                            <li className="fourCalculation">부가세</li>
-                            <li className="fourCalculation">총계(부가세포함)</li>
-                        </ul>
-                        <ul className="fourLineContentResult">
-                            <li className="fourCalculation">31,550,000</li>
-                            <li className="fourCalculation">3,000,000</li>
-                            <li className="fourCalculation">34,550,000</li>
-                        </ul>
-                    </div>  
-                </div>
-                <div className="boundaryLineFour">
-                    <div className="lineFour">
-                        <div className="fourLineTitle">할인 견적</div>
-                        <ul className="fourLineContentList">
-                            <li className="fourCalculation">합계</li>
-                            <li className="fourCalculation">부가세</li>
-                            <li className="fourCalculation">총계(부가세포함)</li>
-                        </ul>
-                        <ul className="fourLineContentResult">
-                            <li className="fourCalculation">31,550,000</li>
-                            <li className="fourCalculation">3,000,000</li>
-                            <li className="fourCalculation">34,550,000</li>
-                        </ul>
-                    </div>  
-                </div>          
+                <div className="line">
+                    <div className="fourLineTitle">항목별 견적</div>
+                    <ul className="fourLineContentList">
+                        <li className="fourCalculation">합계</li>
+                        <li className="fourCalculation">부가세</li>
+                        <li className="fourCalculation">총계(부가세포함)</li>
+                    </ul>
+                    <ul className="fourLineContentResult">
+                        <li className="fourCalculation">{
+                            regex.replace.price(thirdLines.reduce((prev, thirdLine) => {
+                                return prev + thirdLine.content.reduce((_prev, item) => _prev + item.thirdAmount, 0)
+                            }, 0))
+                        }</li>
+                        <li className="fourCalculation">3,000,000</li>
+                        <li className="fourCalculation">34,550,000</li>
+                    </ul>
+                </div>  
+                <div className="line">
+                    <div className="fourLineTitle">할인 견적</div>
+                    <ul className="fourLineContentList">
+                        <li className="fourCalculation">합계</li>
+                        <li className="fourCalculation">부가세</li>
+                        <li className="fourCalculation">총계(부가세포함)</li>
+                    </ul>
+                    <ul className="fourLineContentResult">
+                        <li className="fourCalculation">22,000,000</li>
+                        <li className="fourCalculation">2,200,000</li>
+                        <li className="fourCalculation">24,200,000</li>
+                    </ul>
+                </div>        
             </div>
         </div>
     )
