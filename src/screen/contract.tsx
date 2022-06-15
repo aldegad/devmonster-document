@@ -3,7 +3,7 @@ import Header from "../component/header";
 import "../css/contract.css";
 
 export default function Contract() {
-    const titleName = "devmonster\n개발 계약서";
+    const titleName = "개발 계약서";
 
     const contractContent = [
         {title : "계약명 : ", content : "플릿 앱 / 백오피스 개발"},
@@ -93,7 +93,7 @@ export default function Contract() {
                 제3조 (용역의 대상 및 범위)
                 본 계약에 따라 “을”이 수행할 용역의 범위 및 내용은 아래와 같다
                 분석 및 기획
-                디자인 및 데이터 구축 개 발
+                디자인 및 데이터 구축 개발
                 시험 및 교육
                 “을”은 “갑”의 용역의 추가 또는 변경 요청이 있는 경우 계약 금액의 조정, 용역 기간의 변경 및 기타 계약에 필요한 사항은 “갑”과 “을”이 별도 협의하여 정한다.
                 </div>

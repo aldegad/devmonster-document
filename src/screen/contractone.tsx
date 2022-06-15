@@ -3,7 +3,7 @@ import Header from "../component/header";
 import "../css/contract.css";
 
 export default function ContractOne() {
-    const titleName = "devmonster\n개발 계약서";
+    const titleName = "개발 계약서";
     return (
         <div className="contract">
             <Header title={titleName} />

@@ -28,7 +28,7 @@ export default function App() {
         <ContractTwo />
       </div>
       <div>
-      <button onClick={button}>dsfsdfsd</button>
+      <button onClick={button}>프린트 버튼</button>
       </div>
     </div>
   )
