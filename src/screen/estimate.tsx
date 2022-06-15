@@ -63,7 +63,7 @@ export default function Estimate() {
     return (
         <div className="estimate">
             <Header title="견적서"/>
-            <button style={{position:"absolute", top:'45mm', left:'73.3mm'}} onClick={correctButton}>{correctBool ? "수정 완료" : "수정 하기"}</button>
+            {/* <button style={{position:"absolute", top:'45mm', left:'73.3mm'}} onClick={correctButton}>{correctBool ? "수정 완료" : "수정 하기"}</button> */}
             {/* 첫번째 */}
             <div className="estimateContent1">
                 <div className="boundaryLine">
