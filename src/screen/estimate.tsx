@@ -29,8 +29,7 @@ export default function Estimate() {
         {secondTitle: "개발툴", content: "Visual Studio Code / Visual Studio"},
     ]);
 
-    const thirdLinesFirstCategory = [
-        // 
+    const [thirdLinesFirstCategory, setThirdLinesFirstCategory] = useState([
         {  
             title : "1. 서버 / 프론트",
             content : [
@@ -42,11 +41,14 @@ export default function Estimate() {
             {thirdTitle:"월간수업 캘린더", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
             {thirdTitle:"문자발송등록관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
             ]
+        },
+        {
+            title: "2. PC홈페이지",
+            content: [
+                {thirdTitle:"사용자 인터페이스 개발", thirdPeriod:"9.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"}
+            ]
         }
-    ]
-    const thirdLinesSecondCategory = [
-        {thirdTitle:"사용자 인터페이스 개발", thirdPeriod:"9.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"}
-    ]
+    ]);
 
     const fourList = ["BGBG2022_발주.doc 문서 기준으로 작성되었습니다.","웹 기반이므로 코디마스터 프로그램중 2007 한글파일이 필요한 연동기능은 제외되었습니다."]
 
@@ -95,7 +97,25 @@ export default function Estimate() {
                     <li className="boundaryLineThreeList">인원</li>
                     <li className="boundaryLineThreeList">단가</li>
                     <li className="boundaryLineThreeList">금액</li>
-                </ul>        
+                </ul>      
+                {thirdLinesFirstCategory.map((v)=>{
+                    return (
+                        <div>
+                            <div className="lineThree">{v.title}</div>
+                                {v.content.map((vv,i) => {
+                                    return (
+                                        <ul key={i} className="lineThreeList">
+                                            <li key={vv.thirdTitle} className="lineThreeFirst">{vv.thirdTitle}</li>
+                                            <li key={vv.thirdPeriod} className="lineThreeContent">{vv.thirdPeriod}</li>
+                                            <li key={vv.thirdPersonnel} className="lineThreeContent">{vv.thirdPersonnel}</li>
+                                            <li key={vv.thirdUnitPrice} className="lineThreeContent">{vv.thirdUnitPrice}</li>
+                                            <li key={vv.thirdAmount} className="lineThreeContent">{vv.thirdAmount}</li>
+                                        </ul> 
+                                    )
+                                })}
+                        </div>
+                    )
+                })}  
                 {/* <div className="lineThree">1. 서버 / 프론트</div>
                     {
                         thirdLinesFirstCategory.map((v,i)=>{
