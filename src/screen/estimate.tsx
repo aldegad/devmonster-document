@@ -31,21 +31,9 @@ export default function Estimate() {
 
     const [thirdLinesFirstCategory, setThirdLinesFirstCategory] = useState([
         {  
-            title : "1. 서버 / 프론트",
+            title : "",
             content : [
-                {thirdTitle:"기획-스토리보드", thirdPeriod:"14.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"},
-                {thirdTitle:"UI 디자인", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"관리자-회원관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"관리자-위탁사 등록 관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"위탁사-기초정보 등록관리 (교실명, 강좌영역, 수업시간, 대상학년, 공휴일 등)", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"월간수업 캘린더", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"},
-                {thirdTitle:"문자발송등록관리", thirdPeriod:"7.0", thirdPersonnel:"1", thirdUnitPrice:"2,200,000", thirdAmount:"2,200,000"}
-            ]
-        },
-        {
-            title: "2. PC홈페이지",
-            content: [
-                {thirdTitle:"사용자 인터페이스 개발", thirdPeriod:"9.0", thirdPersonnel:"2", thirdUnitPrice:"4,500,000", thirdAmount:"4,500,000"}
+                {thirdTitle:"", thirdPeriod:"", thirdPersonnel:"", thirdUnitPrice:"", thirdAmount:""},
             ]
         }
     ]);
@@ -63,7 +51,7 @@ export default function Estimate() {
     return (
         <div className="estimate">
             <Header title="견적서"/>
-            {/* <button style={{position:"absolute", top:'45mm', left:'73.3mm'}} onClick={correctButton}>{correctBool ? "수정 완료" : "수정 하기"}</button> */}
+            <button style={{position:"absolute", top:'45mm', left:'73.3mm'}} onClick={correctButton}>{correctBool ? "수정 완료" : "수정 하기"}</button>
             {/* 첫번째 */}
             <div className="estimateContent1">
                 <div className="boundaryLine">
@@ -93,7 +81,7 @@ export default function Estimate() {
 
             {/* 세번째 */}
             <div className="estimateContent3">
-                {correctBool ? <button style={{position:"absolute", right:'56mm'}}>추가하기</button> : null}
+                {/* {correctBool ? <button style={{position:"absolute", right:'56mm'}} onClick={()=>{}}>추가하기</button> : null} */}
                 <ul className="boundaryLineThreeHead">
                     <li className="boundaryLineThreeList1">내용</li>
                     <li className="boundaryLineThreeList">기간</li>
@@ -104,6 +92,7 @@ export default function Estimate() {
                 {thirdLinesFirstCategory.map((v)=>{
                     return (
                         <div>
+                            <input type={"text"} />
                             <div className="lineThree">{v.title}</div>
                                 {v.content.map((vv,i) => {
                                     return (
@@ -116,6 +105,7 @@ export default function Estimate() {
                                         </ul> 
                                     )
                                 })}
+                                {correctBool ? <button>+</button> : null}
                         </div>
                     )
                 })}  
