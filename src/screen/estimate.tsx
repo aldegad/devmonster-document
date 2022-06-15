@@ -32,27 +32,29 @@ export default function Estimate() {
             title : "1. 하이브리드앱 퍼블리싱 및 프론트 제작",
             content : [
                 {thirdTitle:"개발 설계 및 테마 제작", thirdPeriod: 15, thirdAmount: 2500000},
+                {thirdTitle:"네이티브 - 카메라", thirdPeriod: 1, thirdAmount: 400000},
+                {thirdTitle:"네이티브 - GPS", thirdPeriod: 2, thirdAmount: 800000},
                 {thirdTitle:"인증시스템(login/join/terms)", thirdPeriod: 4, thirdAmount: 1600000},
                 {thirdTitle:"인증시스템(find-id/find-password)", thirdPeriod: 1, thirdAmount: 400000},
                 {thirdTitle:"메인(swiper, list/card, tabs)", thirdPeriod: 2, thirdAmount: 800000},
-                {thirdTitle:"검색(search, list/store)", thirdPeriod: 1, thirdAmount: 600000},
+                {thirdTitle:"검색(search, list/store)", thirdPeriod: 1, thirdAmount: 400000},
                 {thirdTitle:"검색결과(search, list/card)", thirdPeriod: 0.5, thirdAmount: 200000},
-                {thirdTitle:"공지사항(segment, list/accordian, tabs)", thirdPeriod: 1, thirdAmount: 600000},
+                {thirdTitle:"공지사항(segment, list/accordian, tabs)", thirdPeriod: 1.5, thirdAmount: 600000},
                 {thirdTitle:"강의신청(like, share, segment, rich-content, list/card)", thirdPeriod: 2, thirdAmount: 800000},
                 {thirdTitle:"강의결재(checkbox, list/edit, rich-content/edit, payment)", thirdPeriod: 3, thirdAmount: 1200000},
                 {thirdTitle:"마이페이지(rich-content, list/card, tabs)", thirdPeriod: 1, thirdAmount: 400000},
                 {thirdTitle:"회원정보수정(profile/edit, tabs)", thirdPeriod: 1.5, thirdAmount: 600000},
                 {thirdTitle:"찜한강의(checkbox, list/card, list/edit)", thirdPeriod: 2, thirdAmount: 800000},
-                {thirdTitle:"증명서 발급(list/card, tabs)", thirdPeriod: 1, thirdAmount: 2200000},
-                {thirdTitle:"나의 강의실,메인(segment, video/custom-player, list/accordian, tabs, GPS)", thirdPeriod: 4, thirdAmount: 2400000},
-                {thirdTitle:"나의 강의실,공지사항(segment, list/accordian, tabs)", thirdPeriod: 1, thirdAmount: 600000},
-                {thirdTitle:"나의 강의실,강의(segment, video/custom-player, list, tabs, GPS)", thirdPeriod: 2, thirdAmount: 1200000},
+                {thirdTitle:"증명서 발급(list/card, tabs)", thirdPeriod: 1.5, thirdAmount: 600000},
+                {thirdTitle:"나의 강의실,메인(segment, video/custom-player, list/accordian, tabs, GPS)", thirdPeriod: 3, thirdAmount: 1200000},
+                {thirdTitle:"나의 강의실,공지사항(segment, list/accordian, tabs)", thirdPeriod: 1, thirdAmount: 400000},
+                {thirdTitle:"나의 강의실,강의(segment, video/custom-player, list, tabs, GPS)", thirdPeriod: 1.5, thirdAmount: 600000},
                 {thirdTitle:"나의 강의실,시험(segment, list, tabs)", thirdPeriod: 1, thirdAmount: 400000},
                 {thirdTitle:"나의 강의실,시험상세(segment, rich-content, tabs)", thirdPeriod: 1.5, thirdAmount: 600000},
-                {thirdTitle:"나의 강의실,시험도중(segment, rich-content/edit, tabs)", thirdPeriod: 2, thirdAmount: 800000},
+                {thirdTitle:"나의 강의실,시험도중(segment, rich-content/edit, tabs)", thirdPeriod: 2.5, thirdAmount: 1200000},
                 {thirdTitle:"나의 강의실,과제(segment, list, tabs)", thirdPeriod: 1, thirdAmount: 400000},
                 {thirdTitle:"나의 강의실,과제상세(segment, rich-content, tabs)", thirdPeriod: 1, thirdAmount: 400000},
-                {thirdTitle:"나의 강의실,과제제출(segment, rich-content/edit, tabs)", thirdPeriod: 1, thirdAmount: 600000},
+                {thirdTitle:"나의 강의실,과제제출(segment, rich-content/edit, tabs)", thirdPeriod: 1.5, thirdAmount: 600000},
             ]
         },
         {
@@ -175,8 +177,16 @@ export default function Estimate() {
                                 return prev + thirdLine.content.reduce((_prev, item) => _prev + item.thirdAmount, 0)
                             }, 0))
                         }</li>
-                        <li className="fourCalculation">3,000,000</li>
-                        <li className="fourCalculation">34,550,000</li>
+                        <li className="fourCalculation">{
+                            regex.replace.price(thirdLines.reduce((prev, thirdLine) => {
+                                return prev + thirdLine.content.reduce((_prev, item) => _prev + item.thirdAmount, 0)
+                            }, 0)*0.1)
+                        }</li>
+                        <li className="fourCalculation">{
+                            regex.replace.price((thirdLines.reduce((prev, thirdLine) => {
+                                return prev + thirdLine.content.reduce((_prev, item) => _prev + item.thirdAmount, 0)
+                            }, 0)*1.1).toFixed(0))
+                        }</li>
                     </ul>
                 </div>  
                 <div className="line">
@@ -187,9 +197,9 @@ export default function Estimate() {
                         <li className="fourCalculation">총계(부가세포함)</li>
                     </ul>
                     <ul className="fourLineContentResult">
+                        <li className="fourCalculation">20,000,000</li>
+                        <li className="fourCalculation">2,000,000</li>
                         <li className="fourCalculation">22,000,000</li>
-                        <li className="fourCalculation">2,200,000</li>
-                        <li className="fourCalculation">24,200,000</li>
                     </ul>
                 </div>        
             </div>
