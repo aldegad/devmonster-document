@@ -18,7 +18,7 @@ export default function App() {
       <div className="printPage">
         <Estimate />
       </div>
-      <div className="printPage">
+      {/* <div className="printPage">
         <Contract />
       </div>
       <div className="printPage">
@@ -26,7 +26,7 @@ export default function App() {
       </div>
       <div className="printPage">
         <ContractTwo />
-      </div>
+      </div> */}
       <div>
       <button onClick={button}>프린트 버튼</button>
       </div>
