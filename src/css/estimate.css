@@ -12,7 +12,7 @@
     min-height: 257mm;
 }
 
-.estimateContent1, .estimateContent2{
+.estimateContent1, .estimateContent2 {
     margin-bottom: var(--section-margin);
     border-top: var(--border-bold) solid black;
     border-bottom: var(--border-bold) solid black;
@@ -91,6 +91,7 @@
     flex: 4;
     list-style: none;
     padding-left: 15px;
+    white-space: pre-line;
     color: rgb(53, 53, 53);
 }
 
