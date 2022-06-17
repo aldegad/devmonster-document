@@ -34,12 +34,6 @@ export default function Estimate() {
                 {thirdTitle:"타이틀", thirdPeriod:3.0, thirdPersonnel:"ㄴㄹㄴㄹㄴㅇㄹ", thirdUnitPrice:5000, thirdAmount:5000},
             ]
         },
-        {  
-            title : "2번",
-            content : [
-                {thirdTitle:"타틀2", thirdPeriod:4.5, thirdPersonnel:"ㄴㅇㄹ", thirdUnitPrice:5000, thirdAmount:5000},
-            ]
-        }
     ]);
 
     const fourList = [
@@ -63,7 +57,8 @@ export default function Estimate() {
                         return (
                             <div key={i} className="line">
                                 <div key={v.firstTitle} className="firstLineTitle">{v.firstTitle}</div>
-                                {correctBool ? <input type={"text"} className="firstLineContent" value={v.content} onChange={(e) => valueOnChange(e.target.value,i,firstLines,setFirstLines)} />  : <div key={v.content} className="firstLineContent">{v.content}</div> }
+                                {/* {correctBool ? <input type={"text"} className="firstLineContent" value={v.content} onChange={(e) => valueOnChange(e.target.value,i,firstLines,setFirstLines)} />  : <div key={v.content} className="firstLineContent">{v.content}</div> } */}
+                                <div key={v.content} className="firstLineContent">{v.content}</div>
                             </div>     
                         )
                     })}
@@ -75,7 +70,8 @@ export default function Estimate() {
                         return (
                             <div key={i} className="line">
                                 <div key={v.secondTitle} className="firstLineTitle">{v.secondTitle}</div>
-                                {correctBool ? <input type={"text"} className="firstLineContent" value={v.content} onChange={(e) => valueOnChange(e.target.value,i,secondLines,setSecondLines)} /> : <div key={v.content} className="firstLineContent">{v.content}</div>}
+                                {/* {correctBool ? <input type={"text"} className="firstLineContent" value={v.content} onChange={(e) => valueOnChange(e.target.value,i,secondLines,setSecondLines)} /> : <div key={v.content} className="firstLineContent">{v.content}</div>} */}
+                                <div key={v.content} className="firstLineContent">{v.content}</div>
                             </div>   
                         )
                     })}
@@ -103,7 +99,7 @@ export default function Estimate() {
                                         </ul> 
                                     )
                                 })}
-                                {correctBool ? <button>+</button> : null}
+                                {/* {correctBool ? <button>+</button> : null} */}
                         </div>
                     )
                 })}  
