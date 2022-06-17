@@ -29,13 +29,49 @@ export default function Estimate() {
         {title: "개발툴", content: "Visual Studio Code"}
     ]);
 
-    const [thirdLinesFirstCategory, setThirdLinesFirstCategory] = useState([
+    const [thirdLines, setThirdLines] = useState([
         {  
             title : "1번",
             content : [
-                {thirdTitle:"타이틀", thirdPeriod:3.0, thirdPersonnel:"ㄴㄹㄴㄹㄴㅇㄹ", thirdUnitPrice:5000, thirdAmount:5000},
+                {subTitle:"개발 설계 및 테마 제작", period: 15, amount: 2500000},
+                {subTitle:"네이티브 - 카메라", period: 1, amount: 400000},
+                {subTitle:"네이티브 - GPS", period: 2, amount: 800000},
+                {subTitle:"인증시스템(login/join/terms)", period: 4, amount: 1600000},
+                {subTitle:"인증시스템(find-id/find-password)", period: 1, amount: 400000},
+                {subTitle:"메인(swiper, list/card, tabs)", period: 2, amount: 800000},
+                {subTitle:"검색(search, list/store)", period: 1, amount: 400000},
+                {subTitle:"검색결과(search, list/card)", period: 0.5, amount: 200000},
+                {subTitle:"공지사항(segment, list/accordian, tabs)", period: 1.5, amount: 600000},
+                {subTitle:"강의신청(like, share, segment, rich-content, list/card)", period: 2, amount: 800000},
+                {subTitle:"강의결재(checkbox, list/edit, rich-content/edit, payment)", period: 3, amount: 1200000},
+                {subTitle:"마이페이지(rich-content, list/card, tabs)", period: 1, amount: 400000},
+                {subTitle:"회원정보수정(profile/edit, tabs)", period: 1.5, amount: 600000},
+                {subTitle:"찜한강의(checkbox, list/card, list/edit)", period: 2, amount: 800000},
+                {subTitle:"증명서 발급(list/card, tabs)", period: 1.5, amount: 600000},
+                {subTitle:"나의 강의실,메인(segment, video/custom-player, list/accordian, tabs, GPS)", period: 3, amount: 1200000},
+                {subTitle:"나의 강의실,공지사항(segment, list/accordian, tabs)", period: 1, amount: 400000},
+                {subTitle:"나의 강의실,강의(segment, video/custom-player, list, tabs, GPS)", period: 1.5, amount: 600000},
+                {subTitle:"나의 강의실,시험(segment, list, tabs)", period: 1, amount: 400000},
+                {subTitle:"나의 강의실,시험상세(segment, rich-content, tabs)", period: 1.5, amount: 600000},
+                {subTitle:"나의 강의실,시험도중(segment, rich-content/edit, tabs)", period: 2.5, amount: 1200000},
+                {subTitle:"나의 강의실,과제(segment, list, tabs)", period: 1, amount: 400000},
+                {subTitle:"나의 강의실,과제상세(segment, rich-content, tabs)", period: 1, amount: 400000},
+                {subTitle:"나의 강의실,과제제출(segment, rich-content/edit, tabs)", period: 1.5, amount: 600000},
             ]
         },
+        {
+            title: "2. 디버깅",
+            content: [
+                {subTitle:"단위테스트", period: 30, amount: 5000000}
+            ]
+        },
+        {
+            title: "3. 출시",
+            content: [
+                {subTitle:"안드로이드 스토어 설정 및 배포", period: 7, amount: 1100000},
+                {subTitle:"아이폰 스토어 설정 및 배포", period: 14, amount: 2200000}
+            ]
+        }
     ]);
 
     const [fourList, setFourList] = useState([
