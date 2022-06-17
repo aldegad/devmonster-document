@@ -4,7 +4,7 @@ import "../css/header.css";
 export default function Header({title}:any) {
     let now = new Date();
     let nowYears = `${now.getFullYear()}`;
-    let nowMonth = `${now.getMonth()}`;
+    let nowMonth = `${now.getMonth()+1}`;
     let nowDay = `${now.getDate()}`;
     if(nowMonth.length === 1) nowMonth = `0${nowMonth}`;
     if(nowDay.length === 1) nowDay = `0${nowDay}`;
