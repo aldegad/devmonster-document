@@ -43,6 +43,6 @@ body {
         page-break-after: always;
     }
     .not-print {
-        display: none;
+        display: none !important;
     }
 }

@@ -1,5 +1,9 @@
 export const regex = {
     replace: {
+        number:(number:string | number) => {
+          let str = String(number);
+          return Number(str.replace(/[^\d]/g, ''));
+        },
         price: (number:string | number) => {
             let sNumber = String(number);
             let sNumber_2 = [];
