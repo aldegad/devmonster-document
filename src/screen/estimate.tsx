@@ -318,7 +318,7 @@ export default function Estimate() {
                         </ul>
                     </div>  
                     <div className="line">
-                        <div className="fourLineTitle">할인 견적</div>
+                        <div className="fourLineTitle">실 견적</div>
                         <ul className="fourLineContentList">
                             <li className="fourCalculation">합계</li>
                             <li className="fourCalculation">부가세</li>
