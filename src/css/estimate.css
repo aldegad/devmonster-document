@@ -22,6 +22,7 @@
     border-bottom: var(--inner-border-width) solid var(--border-color);
     display: flex;
     padding: 5px 0 5px 0;
+    break-inside: avoid;
 }
 
 
