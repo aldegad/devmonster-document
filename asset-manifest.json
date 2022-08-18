@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/devmonster-document/static/css/main.08d82ae2.css",
-    "main.js": "/devmonster-document/static/js/main.8f4246df.js",
+    "main.js": "/devmonster-document/static/js/main.fa8f691a.js",
     "static/media/test.png": "/devmonster-document/static/media/test.b1133f91aedc8793b2cf.png",
     "index.html": "/devmonster-document/index.html",
     "main.08d82ae2.css.map": "/devmonster-document/static/css/main.08d82ae2.css.map",
-    "main.8f4246df.js.map": "/devmonster-document/static/js/main.8f4246df.js.map"
+    "main.fa8f691a.js.map": "/devmonster-document/static/js/main.fa8f691a.js.map"
   },
   "entrypoints": [
     "static/css/main.08d82ae2.css",
-    "static/js/main.8f4246df.js"
+    "static/js/main.fa8f691a.js"
   ]
 }
