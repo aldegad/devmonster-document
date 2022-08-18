@@ -6,9 +6,10 @@ import ContractTwo from "./screen/contracttwo";
 import Estimate from "./screen/estimate";
 
 const button = (e:any) => {
-  e.target.style.display = "none";
+  /* e.target.style.display = "none";
   window.print();
-  e.target.style.display = "inline-block";
+  e.target.style.display = "inline-block"; */
+  alert('open!');
   window.open('com.cntti.cntti://expo-development-client/?url=http%3A%2F%2F172.30.1.19%3A8081');
 }
 

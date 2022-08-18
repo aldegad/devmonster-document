@@ -317,7 +317,7 @@ export default function Estimate() {
                             }</li>
                         </ul>
                     </div>  
-                    {/* <div className="line">
+                    <div className="line">
                         <div className="fourLineTitle">실 견적</div>
                         <ul className="fourLineContentList">
                             <li className="fourCalculation">합계</li>
@@ -329,7 +329,7 @@ export default function Estimate() {
                             <li className="fourCalculation">{regex.replace.price(total[1].amount*0.1)}</li>
                             <li className="fourCalculation">{regex.replace.price((total[1].amount*1.1).toFixed(0))}</li>
                         </ul>
-                    </div>   */}      
+                    </div>
                 </div>
             </div>
         </>
