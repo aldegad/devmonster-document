@@ -31,7 +31,7 @@ export default function App() {
         <ContractTwo />
       </div> */}
       <div>
-      <button className="no-print" onClick={button}>프린트 버튼</button>
+      <button className="not-print" onClick={button}>프린트 버튼</button>
       </div>
     </div>
   )

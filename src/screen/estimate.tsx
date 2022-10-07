@@ -157,6 +157,10 @@ export default function Estimate() {
         setThirdLineHide(cur => ({...cur, [key]:!thirdLineHide[key]}));
     }
 
+    const preTotal = thirdLines.reduce((prev, thirdLine) => {
+        return prev + thirdLine.content.reduce((_prev, item) => _prev + regex.replace.number(item.amount), 0)
+    }, 0)
+
     return (
         <>
             <div className="topButtons not-print">
@@ -301,9 +305,7 @@ export default function Estimate() {
                         </ul>
                         <ul className="fourLineContentResult">
                             <li className="fourCalculation">{
-                                regex.replace.price(thirdLines.reduce((prev, thirdLine) => {
-                                    return prev + thirdLine.content.reduce((_prev, item) => _prev + regex.replace.number(item.amount), 0)
-                                }, 0))
+                                regex.replace.price(preTotal)
                             }</li>
                             <li className="fourCalculation">{
                                 regex.replace.price(thirdLines.reduce((prev, thirdLine) => {
@@ -320,11 +322,13 @@ export default function Estimate() {
                     <div className="line">
                         <div className="fourLineTitle">실 견적</div>
                         <ul className="fourLineContentList">
+                            <li className="fourCalculation">할인율</li>
                             <li className="fourCalculation">합계</li>
                             <li className="fourCalculation">부가세</li>
                             <li className="fourCalculation">총계(부가세포함)</li>
                         </ul>
                         <ul className="fourLineContentResult">
+                            <li className="fourCalculation">{regex.replace.price((100 - total[1].amount/preTotal * 100).toFixed(0))}%</li>
                             <li className="fourCalculation">{regex.replace.price(total[1].amount)}</li>
                             <li className="fourCalculation">{regex.replace.price(total[1].amount*0.1)}</li>
                             <li className="fourCalculation">{regex.replace.price((total[1].amount*1.1).toFixed(0))}</li>
