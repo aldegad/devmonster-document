@@ -161,6 +161,8 @@ export default function Estimate() {
         return prev + thirdLine.content.reduce((_prev, item) => _prev + regex.replace.number(item.amount), 0)
     }, 0)
 
+    const discountPrice = parseInt((100 - total[1].amount/preTotal * 100).toFixed(0));
+
     return (
         <>
             <div className="topButtons not-print">
@@ -322,15 +324,23 @@ export default function Estimate() {
                     <div className="line">
                         <div className="fourLineTitle">실 견적</div>
                         <ul className="fourLineContentList">
-                            <li className="fourCalculation">할인율</li>
+                            {
+                                discountPrice ?
+                                <li className="fourCalculation">할인율</li>
+                                : null
+                            }
                             <li className="fourCalculation">합계</li>
                             <li className="fourCalculation">부가세</li>
                             <li className="fourCalculation">총계(부가세포함)</li>
                         </ul>
                         <ul className="fourLineContentResult">
-                            <li className="fourCalculation">{regex.replace.price((100 - total[1].amount/preTotal * 100).toFixed(0))}%</li>
+                            {
+                                discountPrice ?
+                                <li className="fourCalculation">{discountPrice}%</li>
+                                : null
+                            }
                             <li className="fourCalculation">{regex.replace.price(total[1].amount)}</li>
-                            <li className="fourCalculation">{regex.replace.price(total[1].amount*0.1)}</li>
+                            <li className="fourCalculation">{regex.replace.price(Math.floor(total[1].amount*0.1))}</li>
                             <li className="fourCalculation">{regex.replace.price((total[1].amount*1.1).toFixed(0))}</li>
                         </ul>
                     </div>
