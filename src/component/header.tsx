@@ -11,7 +11,11 @@ export default function Header({title}:any) {
     let today = `${nowYears}.${nowMonth}.${nowDay}`;
     return (
         <div className="header">
-            <img className="headerLeft" src={require('../img/test.png')} alt="logo"/>
+            <div style={{ position: 'relative' }}>
+                <img className="headerLeft" src={require('../img/test.png')} alt="logo"/>
+                <p>주식회사 데브몬스터 (인)</p>
+                <img src={require('../img/도장_데브몬스터.png')} alt="stemp" style={{ position: 'absolute', right: 25, bottom: -5, width: 50, height: 50 }}/>
+            </div>
             <h1 className="headerCenter">{title}</h1>
             <div className="headerRight">
                 <div className="rightTop">
